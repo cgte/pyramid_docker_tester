@@ -6,7 +6,7 @@ method = 'GET'
 if len(sys.argv) > 1: # so you can  --fail
     method = 'get'
 
-conn =  HTTPConnection('127.0.0.1', 6543)
+conn =  HTTPConnection('127.0.0.1', 6543, timeout=2)
 conn.request(method, '/')
 resp = conn.getresponse()
 content = resp.read()
